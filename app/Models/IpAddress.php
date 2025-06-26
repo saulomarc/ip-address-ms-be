@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Observers\IpAddressObserver;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 
+#[ObservedBy([IpAddressObserver::class])]
 class IpAddress extends Model
 {
     protected $appends = ['owner_name'];
