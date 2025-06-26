@@ -34,7 +34,8 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json(JWTAuth::user());
+        $user = User::where('email', JWTAuth::user()->email)->with('roles')->with('permissions')->first();
+        return response()->json($user);
     }
 
     /**
