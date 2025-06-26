@@ -59,4 +59,35 @@ class IpAddressService implements GenericService
             );
         }
     }
+
+    function deleteData(Request $request, $id)
+    {
+        DB::beginTransaction();
+
+        try {
+            $ip_address = IpAddress::destroy($id);
+
+            DB::commit();
+
+            return response()->json(
+                [
+                    'message' => 'IP Address Successfully Deleted',
+                    'status' => 'Ok'
+                ],
+                200
+            );
+
+        } catch (Exception $ex) {
+            DB::rollBack();
+
+            return response()->json(
+                [
+                    'message' => $ex->getMessage()
+                ],
+                500
+            );            
+        }
+
+
+    }
 }

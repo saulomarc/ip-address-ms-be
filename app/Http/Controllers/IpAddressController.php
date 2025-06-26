@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddIpAddressRequestForm;
+use App\Models\IpAddress;
 use App\Services\IpAddressService;
 use Illuminate\Http\Request;
 
@@ -47,8 +48,8 @@ class IpAddressController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, IpAddress $ipAddress)
     {
-        //
+        return $this->ipAddressService->deleteData($request, $ipAddress->id);
     }
 }
