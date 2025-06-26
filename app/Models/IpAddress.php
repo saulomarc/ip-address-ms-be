@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class IpAddress extends Model
 {
+    protected $appends = ['owner_name'];
+
     protected $fillable = [
-        'id',
         'ip_address',
         'label',
         'comment',
@@ -44,5 +46,15 @@ class IpAddress extends Model
         if ($filters->has('distinct')) {
             $query->select($filters->column_name)->distinct();
         }
+    }
+
+    protected function ownerName(): Attribute
+    {
+        return Attribute::make(
+            get: function ($value, $attributes) {
+                //get attributes
+                return User::where('id', $attributes['user_id'])->pluck('name')->first();
+            }
+        );
     }
 }
