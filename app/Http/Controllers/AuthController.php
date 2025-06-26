@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserSession;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Exceptions\JWTException;
@@ -43,10 +45,20 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function logout()
+    public function logout(Request $request)
     {
         try {
             JWTAuth::invalidate(JWTAuth::getToken());
+
+            //access the x-session-id header
+            $session_id = $request->header('X-Session-ID');
+
+            //find the user_session which logged_out will be updated
+            $user_session = UserSession::where('session_id', $session_id)->first();
+
+            $user_session->logged_out = now();
+            $user_session->save();
+
         } catch (JWTException $e) {
             return response()->json(['error' => 'Failed to logout, please try again'], 500);
         }
@@ -72,9 +84,19 @@ class AuthController extends Controller
      */
     protected function respondWithToken($token)
     {
+        $session_id = Str::uuid();
+
+        //Create user session for this log in
+        UserSession::create([
+            'user_id' => JWTAuth::user()->id,
+            'session_id' => $session_id,
+            'logged_on' => now()
+        ]);
+
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
+            'session_id' => $session_id,
             'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
     }
