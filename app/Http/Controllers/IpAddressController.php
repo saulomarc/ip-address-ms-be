@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddIpAddressRequestForm;
+use App\Http\Requests\EditIpAddressRequestForm;
 use App\Models\IpAddress;
 use App\Services\IpAddressService;
 use Illuminate\Http\Request;
@@ -32,17 +33,17 @@ class IpAddressController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request, IpAddress $ipAddress)
     {
-        //
+        return $this->ipAddressService->fetchOneResouce($request, $ipAddress->id);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(EditIpAddressRequestForm $request, string $id)
     {
-        //
+        return $this->ipAddressService->editData($request, $id);
     }
 
     /**

@@ -60,6 +60,68 @@ class IpAddressService implements GenericService
         }
     }
 
+    function fetchOneResouce(Request $request, $id)
+    {
+        DB::beginTransaction();
+
+        try {
+            $ip_address = IpAddress::where('id', $id)->first();
+
+            DB::commit();
+
+            return response()->json(
+                [
+                    'ip_address' => $ip_address,
+                    'status' => 'Ok'
+                ],
+                200
+            );
+
+        } catch (Exception $ex) {
+            DB::rollBack();
+
+            return response()->json(
+                [
+                    'message' => $ex->getMessage()
+                ],
+                500
+            );            
+        }
+    }
+
+    function editData(Request $request, $id)
+    {
+        DB::beginTransaction();
+
+        try {
+
+            $ip_address = IpAddress::find($id);
+
+            $ip_address->label = $request->label;
+            
+            $ip_address->save();
+
+            DB::commit();
+
+            return response()->json(
+                [
+                    'message' => 'IP Address Successfully Edited',
+                    'status' => 'Ok'
+                ],
+                200
+            );
+        } catch (Exception $ex) {
+            DB::rollBack();
+
+            return response()->json(
+                [
+                    'message' => $ex->getMessage()
+                ],
+                500
+            );
+        }
+    }
+
     function deleteData(Request $request, $id)
     {
         DB::beginTransaction();
@@ -87,7 +149,5 @@ class IpAddressService implements GenericService
                 500
             );            
         }
-
-
     }
 }
