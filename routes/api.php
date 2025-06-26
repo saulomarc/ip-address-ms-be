@@ -15,6 +15,6 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'auth'], function () {
     Route::post('test', [AuthController::class, 'test']);
 });
 
-Route::group([], function () {
+Route::group(['middleware' => ['auth:api']], function () {
     Route::apiResource('ip-addresses', IpAddressController::class);
 });

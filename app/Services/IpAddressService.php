@@ -3,10 +3,14 @@
 namespace App\Services;
 
 use App\Models\IpAddress;
+use Exception;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class IpAddressService implements GenericService
 {
-    function fetchData($request) {
+    function fetchData(Request $request) {
         $ip_addresses = IpAddress::filter($request);
 
         if ($request->has('items')) {
@@ -20,5 +24,39 @@ class IpAddressService implements GenericService
              'ip_addresses' => $ip_addresses,
             ], 200
         );
+    }
+
+    function addData(Request $request)
+    {
+        DB::beginTransaction();
+
+        try {
+
+            IpAddress::create([
+                'ip_address' => $request->ip_address,
+                'label' => $request->label,
+                'comment' => $request->comment,
+                'user_id' => JWTAuth::user()->id,
+            ]);
+
+            DB::commit();
+
+            return response()->json(
+                [
+                    'message' => 'IP Address Successfully Added',
+                    'status' => 'Ok'
+                ],
+                200
+            );
+        } catch (Exception $ex) {
+            DB::rollBack();
+
+            return response()->json(
+                [
+                    'message' => $ex->getMessage()
+                ],
+                500
+            );
+        }
     }
 }

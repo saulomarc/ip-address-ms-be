@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddIpAddressRequestForm;
 use App\Services\IpAddressService;
 use Illuminate\Http\Request;
 
@@ -22,9 +23,9 @@ class IpAddressController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AddIpAddressRequestForm $request)
     {
-        //
+        return $this->ipAddressService->addData($request);
     }
 
     /**
