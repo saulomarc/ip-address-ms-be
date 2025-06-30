@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuditLogController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IpAddressController;
 use Illuminate\Support\Facades\Route;
@@ -17,4 +18,9 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'auth'], function () {
 
 Route::group(['middleware' => ['auth:api']], function () {
     Route::apiResource('ip-addresses', IpAddressController::class);
+});
+
+Route::group(['middleware' => ['auth:api', 'role:super_admin'], 'prefix' => 'super-admin'], function () {
+    Route::get('user-sessions', [AuditLogController::class, 'fetchUserSessions']);
+    Route::get('ip-addresses', [AuditLogController::class, 'fetchIpAddressLogs']);
 });

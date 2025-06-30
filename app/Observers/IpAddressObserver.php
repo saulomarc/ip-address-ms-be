@@ -20,7 +20,7 @@ class IpAddressObserver
         activity()
             ->causedBy($user)
             ->performedOn($ipAddress)
-            ->withProperties(['new' => request()->all(), 'old' => $ipAddress->getDirty()])
+            ->withProperties(['new' => $ipAddress->getDirty(), 'old' => $ipAddress->getOriginal()])
             ->tap(function(Activity $activity) {
                 $activity->session_id = request()->header('X-Session-Id');
             })
@@ -37,7 +37,7 @@ class IpAddressObserver
         activity()
             ->causedBy($user)
             ->performedOn($ipAddress)
-            ->withProperties(['new' => request()->all(), 'old' => $ipAddress->getDirty()])
+            ->withProperties(['new' => $ipAddress->getChanges(), 'old' => $ipAddress->getPrevious()])
             ->tap(function(Activity $activity) {
                 $activity->session_id = request()->header('X-Session-Id');
             })
