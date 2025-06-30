@@ -10,7 +10,8 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class IpAddressService implements GenericService
 {
-    function fetchData(Request $request) {
+    function fetchData(Request $request) 
+    {
         $ip_addresses = IpAddress::filter($request);
 
         if ($request->has('items')) {
