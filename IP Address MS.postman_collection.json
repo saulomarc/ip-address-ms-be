@@ -120,7 +120,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWZyZXNoIiwiaWF0IjoxNzUxMzQzMzgzLCJleHAiOjE3NTEzNDM2NzEsIm5iZiI6MTc1MTM0MzU1MSwianRpIjoiSzFqclF6VmNoMVVzQ1N0SSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.tqepm0GMhgYcQWmanR_4-T1U92dgXk79ejvTiGSBLbc",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM1NjA4MywiZXhwIjoxNzUxMzU5NjgzLCJuYmYiOjE3NTEzNTYwODMsImp0aSI6IktiTGtjU2E5cTdUdVlFcm8iLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.noFLmuWH-cy6nw8F9Ow3pDB3HroSFwkZnrsr9MNsDbs",
 							"type": "string"
 						}
 					]
@@ -203,7 +203,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWZyZXNoIiwiaWF0IjoxNzUxMzQzMzgzLCJleHAiOjE3NTEzNDM1MTIsIm5iZiI6MTc1MTM0MzM5MiwianRpIjoiV3ZhNzhKU3pvRzBFejM3NyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.4xQbA5ERo8ElXTCVJsX0GXzE9byP5p6ueYj9ty48QCc",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM1NjA4MywiZXhwIjoxNzUxMzU5NjgzLCJuYmYiOjE3NTEzNTYwODMsImp0aSI6IktiTGtjU2E5cTdUdVlFcm8iLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.noFLmuWH-cy6nw8F9Ow3pDB3HroSFwkZnrsr9MNsDbs",
 							"type": "string"
 						}
 					]
@@ -288,7 +288,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWZyZXNoIiwiaWF0IjoxNzUxMzQ2MzMzLCJleHAiOjE3NTEzNDY0NjAsIm5iZiI6MTc1MTM0NjQwMCwianRpIjoidzRzM0dQUk5pNTkzOUF0aCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.bVlZ4b0lIFLl6o_V4nuaLnNmktE1xididl-y5-1sUBM",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM2MDEwNSwiZXhwIjoxNzUxMzYzNzA1LCJuYmYiOjE3NTEzNjAxMDUsImp0aSI6IjI1aEVBcTkzMHlzYlAwNFgiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.6so0-BPBBGd8zE2oM0nmqoKfi-d1NGquSCzrkSvHEcw",
 							"type": "string"
 						}
 					]
@@ -583,13 +583,18 @@
 		},
 		{
 			"name": "POST IP Address (Add)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM1NjA4MywiZXhwIjoxNzUxMzU5NjgzLCJuYmYiOjE3NTEzNTYwODMsImp0aSI6IktiTGtjU2E5cTdUdVlFcm8iLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.noFLmuWH-cy6nw8F9Ow3pDB3HroSFwkZnrsr9MNsDbs",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM2NDg3NywiZXhwIjoxNzUxMzY4NDc3LCJuYmYiOjE3NTEzNjQ4NzcsImp0aSI6IllPZWhmNk16ODJHRFkwaWMiLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Nl8SBfuAyr1D-Y8qiuEEy1GTkn0HromC-OzBHCedN7E",
 							"type": "string"
 						}
 					]
@@ -598,7 +603,12 @@
 				"header": [
 					{
 						"key": "X-Session-ID",
-						"value": "36ae6117-2fdf-45bc-81e0-fee696d48e2d",
+						"value": "b5bcae2e-9503-482a-ac40-593037dc1c1f",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
 						"type": "text"
 					}
 				],
@@ -612,12 +622,12 @@
 						},
 						{
 							"key": "label",
-							"value": "Random IP Address",
+							"value": "tesing",
 							"type": "text"
 						},
 						{
 							"key": "ip_address",
-							"value": "02f0:a2b0:5dfa:5c19:1244:dbe2:d4e9:a705\n",
+							"value": "test",
 							"type": "text"
 						}
 					]
@@ -718,6 +728,11 @@
 		},
 		{
 			"name": "PUT IP Address (Edit)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -734,6 +749,11 @@
 					{
 						"key": "X-Session-ID",
 						"value": "36ae6117-2fdf-45bc-81e0-fee696d48e2d",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
 						"type": "text"
 					}
 				],
