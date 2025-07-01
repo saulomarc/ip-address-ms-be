@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Closure;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
 
 class AddIpAddressRequestForm extends FormRequest
 {
@@ -22,7 +24,15 @@ class AddIpAddressRequestForm extends FormRequest
     public function rules(): array
     {
         return [
-            'ip_address' => 'string|required',
+            'ip_address' => [
+                'string',
+                'required', 
+                function (string $attribute, mixed $value, Closure $fail) {
+                    if (!filter_var($value, FILTER_VALIDATE_IP, [FILTER_FLAG_IPV4, FILTER_FLAG_IPV6])) {
+                        $fail("Invalid format of {$attribute}");
+                    }
+                }
+            ],
             'label' => 'string|required',
         ];
     }
