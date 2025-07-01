@@ -22,7 +22,7 @@ class AuthController extends Controller
     {
         $credentials = request(['email', 'password']);
 
-        if (! $token = JWTAuth::attempt($credentials)) {
+        if (! $token = auth('api')->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
@@ -36,7 +36,7 @@ class AuthController extends Controller
      */
     public function me()
     {
-        $user = User::where('email', JWTAuth::user()->email)->with('roles')->with('permissions')->first();
+        $user = User::where('email', auth('api')->user()->email)->with('roles')->with('permissions')->first();
         return response()->json($user);
     }
 
@@ -48,7 +48,7 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         try {
-            JWTAuth::invalidate(JWTAuth::getToken());
+            auth('api')->logout();
 
             //access the x-session-id header
             $session_id = $request->header('X-Session-ID');
@@ -72,7 +72,11 @@ class AuthController extends Controller
      */
     public function refresh()
     {
-        return $this->respondWithToken(Auth::refresh());
+        return response()->json([
+            'access_token' => auth('api')->refresh(),
+            'token_type' => 'bearer',
+            'expires_in' => auth('api')->factory()->getTTL() * 60
+        ]);
     }
 
     /**
@@ -88,7 +92,7 @@ class AuthController extends Controller
 
         //Create user session for this log in
         UserSession::create([
-            'user_id' => JWTAuth::user()->id,
+            'user_id' => auth('api')->user()->id,
             'session_id' => $session_id,
             'logged_on' => now()
         ]);
