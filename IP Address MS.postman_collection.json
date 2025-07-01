@@ -1,0 +1,1170 @@
+{
+	"info": {
+		"_postman_id": "59fb5504-a195-4dbe-8976-30f498280548",
+		"name": "IP Address MS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9869886"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "admin@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "admin@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 07:48:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM1NjA4MywiZXhwIjoxNzUxMzU5NjgzLCJuYmYiOjE3NTEzNTYwODMsImp0aSI6IktiTGtjU2E5cTdUdVlFcm8iLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.noFLmuWH-cy6nw8F9Ow3pDB3HroSFwkZnrsr9MNsDbs\",\n    \"token_type\": \"bearer\",\n    \"session_id\": \"36ae6117-2fdf-45bc-81e0-fee696d48e2d\",\n    \"expires_in\": 3600\n}"
+				}
+			]
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWZyZXNoIiwiaWF0IjoxNzUxMzQzMzgzLCJleHAiOjE3NTEzNDM2NzEsIm5iZiI6MTc1MTM0MzU1MSwianRpIjoiSzFqclF6VmNoMVVzQ1N0SSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.tqepm0GMhgYcQWmanR_4-T1U92dgXk79ejvTiGSBLbc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"refresh"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Refresh Token Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"refresh"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 08:51:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWZyZXNoIiwiaWF0IjoxNzUxMzU2MDgzLCJleHAiOjE3NTEzNjM0NjEsIm5iZiI6MTc1MTM1OTg2MSwianRpIjoiakhLb0x4aEdTWEVobGRtNCIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7cjbbTpuvduZ92vJo8yHQnpMmNFR82w35VKKcRdvvoc\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Logged In User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWZyZXNoIiwiaWF0IjoxNzUxMzQzMzgzLCJleHAiOjE3NTEzNDM1MTIsIm5iZiI6MTc1MTM0MzM5MiwianRpIjoiV3ZhNzhKU3pvRzBFejM3NyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.4xQbA5ERo8ElXTCVJsX0GXzE9byP5p6ueYj9ty48QCc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Logged In User Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/auth/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 07:55:51 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"Admin Admin\",\n    \"email\": \"admin@example.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2025-06-24T07:26:18.000000Z\",\n    \"updated_at\": \"2025-06-24T07:26:18.000000Z\",\n    \"roles\": [\n        {\n            \"id\": 1,\n            \"name\": \"super_admin\",\n            \"guard_name\": \"api\",\n            \"created_at\": \"2025-06-24T07:26:17.000000Z\",\n            \"updated_at\": \"2025-06-24T07:26:17.000000Z\",\n            \"pivot\": {\n                \"model_type\": \"App\\\\Models\\\\User\",\n                \"model_id\": 4,\n                \"role_id\": 1\n            }\n        }\n    ],\n    \"permissions\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWZyZXNoIiwiaWF0IjoxNzUxMzQ2MzMzLCJleHAiOjE3NTEzNDY0NjAsIm5iZiI6MTc1MTM0NjQwMCwianRpIjoidzRzM0dQUk5pNTkzOUF0aCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.bVlZ4b0lIFLl6o_V4nuaLnNmktE1xididl-y5-1sUBM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Session-ID",
+						"value": "46cb88c4-b082-4c84-bba6-767b5fab3a98",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Logout Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Session-ID",
+								"value": "46cb88c4-b082-4c84-bba6-767b5fab3a98",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 08:55:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully logged out\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET IP Addresses (Get)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM1NjA4MywiZXhwIjoxNzUxMzU5NjgzLCJuYmYiOjE3NTEzNTYwODMsImp0aSI6IktiTGtjU2E5cTdUdVlFcm8iLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.noFLmuWH-cy6nw8F9Ow3pDB3HroSFwkZnrsr9MNsDbs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/ip-addresses?page=1&items=5&order_field=created_at&order_type=DESC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"ip-addresses"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "items",
+							"value": "5"
+						},
+						{
+							"key": "order_field",
+							"value": "created_at"
+						},
+						{
+							"key": "order_type",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET IP Addresses Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/ip-addresses?page=1&items=5&order_field=created_at&order_type=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"ip-addresses"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "items",
+									"value": "5"
+								},
+								{
+									"key": "order_field",
+									"value": "created_at"
+								},
+								{
+									"key": "order_type",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 07:52:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ip_addresses\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 23,\n                \"ip_address\": \"test ip kahit di ip to\",\n                \"label\": \"testing lang\",\n                \"comment\": null,\n                \"user_id\": 1,\n                \"created_at\": \"2025-06-30T03:57:04.000000Z\",\n                \"updated_at\": \"2025-06-30T03:57:04.000000Z\",\n                \"owner_name\": \"Marc Saulo\"\n            },\n            {\n                \"id\": 22,\n                \"ip_address\": \"9dac:b7ed:12c8:75c3:40f5:f6ef:4ebf:8f0b\",\n                \"label\": \"testing new logs for acitivty log display\",\n                \"comment\": null,\n                \"user_id\": 1,\n                \"created_at\": \"2025-06-27T15:53:35.000000Z\",\n                \"updated_at\": \"2025-06-28T03:18:44.000000Z\",\n                \"owner_name\": \"Marc Saulo\"\n            },\n            {\n                \"id\": 21,\n                \"ip_address\": \"b0e0:11ba:8bb2:9b80:6a8f:e0b0:2e21:1677\",\n                \"label\": \"testing logs display testing edit ko to\",\n                \"comment\": null,\n                \"user_id\": 1,\n                \"created_at\": \"2025-06-27T14:59:32.000000Z\",\n                \"updated_at\": \"2025-06-30T03:57:12.000000Z\",\n                \"owner_name\": \"Marc Saulo\"\n            },\n            {\n                \"id\": 20,\n                \"ip_address\": \"3bb7:36fb:40c1:e571:aa09:b524:8183:03ce\",\n                \"label\": \"testing for date for log\",\n                \"comment\": null,\n                \"user_id\": 4,\n                \"created_at\": \"2025-06-27T04:09:28.000000Z\",\n                \"updated_at\": \"2025-06-27T15:23:23.000000Z\",\n                \"owner_name\": \"Admin Admin\"\n            },\n            {\n                \"id\": 19,\n                \"ip_address\": \"120b:c298:abfa:0007:db97:b419:2916:4ac8\",\n                \"label\": \"miss you joyce so much hehe\",\n                \"comment\": null,\n                \"user_id\": 1,\n                \"created_at\": \"2025-06-26T06:15:23.000000Z\",\n                \"updated_at\": \"2025-06-28T03:43:18.000000Z\",\n                \"owner_name\": \"Marc Saulo\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost/api/ip-addresses?page=1\",\n        \"from\": 1,\n        \"last_page\": 2,\n        \"last_page_url\": \"http://localhost/api/ip-addresses?page=2\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/ip-addresses?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://localhost/api/ip-addresses?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/ip-addresses?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://localhost/api/ip-addresses?page=2\",\n        \"path\": \"http://localhost/api/ip-addresses\",\n        \"per_page\": 5,\n        \"prev_page_url\": null,\n        \"to\": 5,\n        \"total\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GET Single IP Address by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM1NjA4MywiZXhwIjoxNzUxMzU5NjgzLCJuYmYiOjE3NTEzNTYwODMsImp0aSI6IktiTGtjU2E5cTdUdVlFcm8iLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.noFLmuWH-cy6nw8F9Ow3pDB3HroSFwkZnrsr9MNsDbs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/ip-addresses/26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"ip-addresses",
+						"26"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET Single IP Address by ID Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/ip-addresses/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"ip-addresses",
+								"26"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 08:13:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ip_address\": {\n        \"id\": 26,\n        \"ip_address\": \"02f0:a2b0:5dfa:5c19:1244:dbe2:d4e9:a705\",\n        \"label\": \"Random IP Address\",\n        \"comment\": null,\n        \"user_id\": 4,\n        \"created_at\": \"2025-07-01T08:09:18.000000Z\",\n        \"updated_at\": \"2025-07-01T08:09:18.000000Z\",\n        \"owner_name\": \"Admin Admin\"\n    },\n    \"status\": \"Ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POST IP Address (Add)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM1NjA4MywiZXhwIjoxNzUxMzU5NjgzLCJuYmYiOjE3NTEzNTYwODMsImp0aSI6IktiTGtjU2E5cTdUdVlFcm8iLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.noFLmuWH-cy6nw8F9Ow3pDB3HroSFwkZnrsr9MNsDbs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Session-ID",
+						"value": "36ae6117-2fdf-45bc-81e0-fee696d48e2d",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "label",
+							"value": "Random IP Address",
+							"type": "text"
+						},
+						{
+							"key": "ip_address",
+							"value": "02f0:a2b0:5dfa:5c19:1244:dbe2:d4e9:a705\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/ip-addresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"ip-addresses"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST IP Address Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Session-ID",
+								"value": "36ae6117-2fdf-45bc-81e0-fee696d48e2d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "label",
+									"value": "Random IP Address",
+									"type": "text"
+								},
+								{
+									"key": "ip_address",
+									"value": "02f0:a2b0:5dfa:5c19:1244:dbe2:d4e9:a705\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/api/ip-addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"ip-addresses"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 08:09:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"IP Address Successfully Added\",\n    \"status\": \"Ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT IP Address (Edit)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM1NjA4MywiZXhwIjoxNzUxMzU5NjgzLCJuYmYiOjE3NTEzNTYwODMsImp0aSI6IktiTGtjU2E5cTdUdVlFcm8iLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.noFLmuWH-cy6nw8F9Ow3pDB3HroSFwkZnrsr9MNsDbs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Session-ID",
+						"value": "36ae6117-2fdf-45bc-81e0-fee696d48e2d",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "label",
+							"value": "Updating label to this value",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/ip-addresses/26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"ip-addresses",
+						"26"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT IP Address Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Session-ID",
+								"value": "36ae6117-2fdf-45bc-81e0-fee696d48e2d",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "label",
+									"value": "Updating label to this value",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/api/ip-addresses/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"ip-addresses",
+								"26"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 08:17:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"IP Address Successfully Edited\",\n    \"status\": \"Ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE IP Address (Delete)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9sb2dpbiIsImlhdCI6MTc1MTM1NjA4MywiZXhwIjoxNzUxMzU5NjgzLCJuYmYiOjE3NTEzNTYwODMsImp0aSI6IktiTGtjU2E5cTdUdVlFcm8iLCJzdWIiOiI0IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.noFLmuWH-cy6nw8F9Ow3pDB3HroSFwkZnrsr9MNsDbs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/ip-addresses/26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"ip-addresses",
+						"26"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE IP Address Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Session-ID",
+								"value": "36ae6117-2fdf-45bc-81e0-fee696d48e2d",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/ip-addresses/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"ip-addresses",
+								"26"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 08:20:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"IP Address Successfully Deleted\",\n    \"status\": \"Ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET User Sessions (Get)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWZyZXNoIiwiaWF0IjoxNzUxMzU2MDgzLCJleHAiOjE3NTEzNjM0NjEsIm5iZiI6MTc1MTM1OTg2MSwianRpIjoiakhLb0x4aEdTWEVobGRtNCIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7cjbbTpuvduZ92vJo8yHQnpMmNFR82w35VKKcRdvvoc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/super-admin/user-sessions?page=1&items=5&order_field=created_at&order_type=DESC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"super-admin",
+						"user-sessions"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "items",
+							"value": "5"
+						},
+						{
+							"key": "order_field",
+							"value": "created_at"
+						},
+						{
+							"key": "order_type",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET User Sessions Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/super-admin/user-sessions?page=1&items=5&order_field=created_at&order_type=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"super-admin",
+								"user-sessions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "items",
+									"value": "5"
+								},
+								{
+									"key": "order_field",
+									"value": "created_at"
+								},
+								{
+									"key": "order_type",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 08:52:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user_sessions\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 56,\n                \"user_id\": 4,\n                \"session_id\": \"fb62656c-cd6c-4e1f-978c-e6fdc9a058ea\",\n                \"logged_on\": \"2025-07-01 15:51:55\",\n                \"logged_out\": null,\n                \"created_at\": \"2025-07-01T07:51:55.000000Z\",\n                \"updated_at\": \"2025-07-01T07:51:55.000000Z\",\n                \"user_name\": \"Admin Admin\",\n                \"logs\": [\n                    {\n                        \"id\": 31,\n                        \"log_name\": \"default\",\n                        \"description\": \"created\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 24,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 4,\n                        \"properties\": {\n                            \"new\": {\n                                \"ip_address\": \"2a03:2880:f11c:8183:face:b00c::25de\",\n                                \"label\": \"Facebook\",\n                                \"comment\": null,\n                                \"user_id\": 4,\n                                \"updated_at\": \"2025-07-01 16:04:21\",\n                                \"created_at\": \"2025-07-01 16:04:21\",\n                                \"id\": 24\n                            },\n                            \"old\": []\n                        },\n                        \"created_at\": \"2025-07-01T08:04:21.000000Z\",\n                        \"updated_at\": \"2025-07-01T08:04:21.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"fb62656c-cd6c-4e1f-978c-e6fdc9a058ea\",\n                        \"user_name\": \"Admin Admin\"\n                    },\n                    {\n                        \"id\": 34,\n                        \"log_name\": \"default\",\n                        \"description\": \"edited\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 24,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 4,\n                        \"properties\": {\n                            \"new\": {\n                                \"label\": \"Facebook IP Address\",\n                                \"updated_at\": \"2025-07-01 16:10:17\"\n                            },\n                            \"old\": {\n                                \"label\": \"Facebook\",\n                                \"updated_at\": \"2025-07-01 16:04:21\"\n                            }\n                        },\n                        \"created_at\": \"2025-07-01T08:10:17.000000Z\",\n                        \"updated_at\": \"2025-07-01T08:10:17.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"fb62656c-cd6c-4e1f-978c-e6fdc9a058ea\",\n                        \"user_name\": \"Admin Admin\"\n                    },\n                    {\n                        \"id\": 36,\n                        \"log_name\": \"default\",\n                        \"description\": \"deleted\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 23,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 4,\n                        \"properties\": {\n                            \"old\": {\n                                \"id\": 23,\n                                \"ip_address\": \"test ip kahit di ip to\",\n                                \"label\": \"testing lang\",\n                                \"comment\": null,\n                                \"user_id\": 1,\n                                \"created_at\": \"2025-06-30T03:57:04.000000Z\",\n                                \"updated_at\": \"2025-06-30T03:57:04.000000Z\",\n                                \"owner_name\": \"Marc Saulo\"\n                            }\n                        },\n                        \"created_at\": \"2025-07-01T08:18:39.000000Z\",\n                        \"updated_at\": \"2025-07-01T08:18:39.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"fb62656c-cd6c-4e1f-978c-e6fdc9a058ea\",\n                        \"user_name\": \"Admin Admin\"\n                    }\n                ]\n            },\n            {\n                \"id\": 55,\n                \"user_id\": 4,\n                \"session_id\": \"36ae6117-2fdf-45bc-81e0-fee696d48e2d\",\n                \"logged_on\": \"2025-07-01 15:48:03\",\n                \"logged_out\": null,\n                \"created_at\": \"2025-07-01T07:48:03.000000Z\",\n                \"updated_at\": \"2025-07-01T07:48:03.000000Z\",\n                \"user_name\": \"Admin Admin\",\n                \"logs\": [\n                    {\n                        \"id\": 33,\n                        \"log_name\": \"default\",\n                        \"description\": \"created\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 26,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 4,\n                        \"properties\": {\n                            \"new\": {\n                                \"ip_address\": \"02f0:a2b0:5dfa:5c19:1244:dbe2:d4e9:a705\",\n                                \"label\": \"Random IP Address\",\n                                \"comment\": null,\n                                \"user_id\": 4,\n                                \"updated_at\": \"2025-07-01 16:09:18\",\n                                \"created_at\": \"2025-07-01 16:09:18\",\n                                \"id\": 26\n                            },\n                            \"old\": []\n                        },\n                        \"created_at\": \"2025-07-01T08:09:18.000000Z\",\n                        \"updated_at\": \"2025-07-01T08:09:18.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"36ae6117-2fdf-45bc-81e0-fee696d48e2d\",\n                        \"user_name\": \"Admin Admin\"\n                    },\n                    {\n                        \"id\": 35,\n                        \"log_name\": \"default\",\n                        \"description\": \"edited\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 26,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 4,\n                        \"properties\": {\n                            \"new\": {\n                                \"label\": \"Updating label to this value\",\n                                \"updated_at\": \"2025-07-01 16:17:56\"\n                            },\n                            \"old\": {\n                                \"label\": \"Random IP Address\",\n                                \"updated_at\": \"2025-07-01 16:09:18\"\n                            }\n                        },\n                        \"created_at\": \"2025-07-01T08:17:56.000000Z\",\n                        \"updated_at\": \"2025-07-01T08:17:56.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"36ae6117-2fdf-45bc-81e0-fee696d48e2d\",\n                        \"user_name\": \"Admin Admin\"\n                    },\n                    {\n                        \"id\": 37,\n                        \"log_name\": \"default\",\n                        \"description\": \"deleted\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 26,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 4,\n                        \"properties\": {\n                            \"old\": {\n                                \"id\": 26,\n                                \"ip_address\": \"02f0:a2b0:5dfa:5c19:1244:dbe2:d4e9:a705\",\n                                \"label\": \"Updating label to this value\",\n                                \"comment\": null,\n                                \"user_id\": 4,\n                                \"created_at\": \"2025-07-01T08:09:18.000000Z\",\n                                \"updated_at\": \"2025-07-01T08:17:56.000000Z\",\n                                \"owner_name\": \"Admin Admin\"\n                            }\n                        },\n                        \"created_at\": \"2025-07-01T08:20:48.000000Z\",\n                        \"updated_at\": \"2025-07-01T08:20:48.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"36ae6117-2fdf-45bc-81e0-fee696d48e2d\",\n                        \"user_name\": \"Admin Admin\"\n                    }\n                ]\n            },\n            {\n                \"id\": 54,\n                \"user_id\": 1,\n                \"session_id\": \"49b4a689-6d8c-4eb1-8f9d-dc69bf392dce\",\n                \"logged_on\": \"2025-07-01 13:53:26\",\n                \"logged_out\": null,\n                \"created_at\": \"2025-07-01T05:53:26.000000Z\",\n                \"updated_at\": \"2025-07-01T05:53:26.000000Z\",\n                \"user_name\": \"Marc Saulo\",\n                \"logs\": []\n            },\n            {\n                \"id\": 53,\n                \"user_id\": 1,\n                \"session_id\": \"46cb88c4-b082-4c84-bba6-767b5fab3a98\",\n                \"logged_on\": \"2025-07-01 13:05:33\",\n                \"logged_out\": \"2025-07-01 13:07:29\",\n                \"created_at\": \"2025-07-01T05:05:33.000000Z\",\n                \"updated_at\": \"2025-07-01T05:07:29.000000Z\",\n                \"user_name\": \"Marc Saulo\",\n                \"logs\": []\n            },\n            {\n                \"id\": 52,\n                \"user_id\": 1,\n                \"session_id\": \"68888ec6-4862-48c1-bde9-b923c64dfd1a\",\n                \"logged_on\": \"2025-07-01 13:01:48\",\n                \"logged_out\": null,\n                \"created_at\": \"2025-07-01T05:01:48.000000Z\",\n                \"updated_at\": \"2025-07-01T05:01:48.000000Z\",\n                \"user_name\": \"Marc Saulo\",\n                \"logs\": []\n            }\n        ],\n        \"first_page_url\": \"http://localhost/api/super-admin/user-sessions?page=1\",\n        \"from\": 1,\n        \"last_page\": 12,\n        \"last_page_url\": \"http://localhost/api/super-admin/user-sessions?page=12\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=5\",\n                \"label\": \"5\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=6\",\n                \"label\": \"6\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=7\",\n                \"label\": \"7\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=8\",\n                \"label\": \"8\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=9\",\n                \"label\": \"9\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=10\",\n                \"label\": \"10\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=11\",\n                \"label\": \"11\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=12\",\n                \"label\": \"12\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/user-sessions?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://localhost/api/super-admin/user-sessions?page=2\",\n        \"path\": \"http://localhost/api/super-admin/user-sessions\",\n        \"per_page\": 5,\n        \"prev_page_url\": null,\n        \"to\": 5,\n        \"total\": 56\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GET IP Address Logs (Get)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9yZWZyZXNoIiwiaWF0IjoxNzUxMzU2MDgzLCJleHAiOjE3NTEzNjM0NjEsIm5iZiI6MTc1MTM1OTg2MSwianRpIjoiakhLb0x4aEdTWEVobGRtNCIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.7cjbbTpuvduZ92vJo8yHQnpMmNFR82w35VKKcRdvvoc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/super-admin/ip-addresses?page=1&items=5&order_field=updated_at&order_type=DESC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"super-admin",
+						"ip-addresses"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "items",
+							"value": "5"
+						},
+						{
+							"key": "order_field",
+							"value": "updated_at"
+						},
+						{
+							"key": "order_type",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET IP Address Logs Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/super-admin/ip-addresses?page=1&items=5&order_field=updated_at&order_type=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"super-admin",
+								"ip-addresses"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "items",
+									"value": "5"
+								},
+								{
+									"key": "order_field",
+									"value": "updated_at"
+								},
+								{
+									"key": "order_type",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.7"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 01 Jul 2025 08:53:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ip_addresses\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 24,\n                \"ip_address\": \"2a03:2880:f11c:8183:face:b00c::25de\",\n                \"label\": \"Facebook IP Address\",\n                \"comment\": null,\n                \"user_id\": 4,\n                \"created_at\": \"2025-07-01T08:04:21.000000Z\",\n                \"updated_at\": \"2025-07-01T08:10:17.000000Z\",\n                \"owner_name\": \"Admin Admin\",\n                \"logs\": [\n                    {\n                        \"id\": 31,\n                        \"log_name\": \"default\",\n                        \"description\": \"created\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 24,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 4,\n                        \"properties\": {\n                            \"new\": {\n                                \"ip_address\": \"2a03:2880:f11c:8183:face:b00c::25de\",\n                                \"label\": \"Facebook\",\n                                \"comment\": null,\n                                \"user_id\": 4,\n                                \"updated_at\": \"2025-07-01 16:04:21\",\n                                \"created_at\": \"2025-07-01 16:04:21\",\n                                \"id\": 24\n                            },\n                            \"old\": []\n                        },\n                        \"created_at\": \"2025-07-01T08:04:21.000000Z\",\n                        \"updated_at\": \"2025-07-01T08:04:21.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"fb62656c-cd6c-4e1f-978c-e6fdc9a058ea\",\n                        \"user_name\": \"Admin Admin\"\n                    },\n                    {\n                        \"id\": 34,\n                        \"log_name\": \"default\",\n                        \"description\": \"edited\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 24,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 4,\n                        \"properties\": {\n                            \"new\": {\n                                \"label\": \"Facebook IP Address\",\n                                \"updated_at\": \"2025-07-01 16:10:17\"\n                            },\n                            \"old\": {\n                                \"label\": \"Facebook\",\n                                \"updated_at\": \"2025-07-01 16:04:21\"\n                            }\n                        },\n                        \"created_at\": \"2025-07-01T08:10:17.000000Z\",\n                        \"updated_at\": \"2025-07-01T08:10:17.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"fb62656c-cd6c-4e1f-978c-e6fdc9a058ea\",\n                        \"user_name\": \"Admin Admin\"\n                    }\n                ]\n            },\n            {\n                \"id\": 7,\n                \"ip_address\": \"7708:1db7:ab13:bf96:9484:886e:1fb7:fa92\",\n                \"label\": \"Testing for another user testing\",\n                \"comment\": null,\n                \"user_id\": 5,\n                \"created_at\": \"2025-06-25T19:25:16.000000Z\",\n                \"updated_at\": \"2025-07-01T04:35:15.000000Z\",\n                \"owner_name\": \"Regular User\",\n                \"logs\": [\n                    {\n                        \"id\": 30,\n                        \"log_name\": \"default\",\n                        \"description\": \"edited\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 7,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 5,\n                        \"properties\": {\n                            \"new\": {\n                                \"label\": \"Testing for another user testing\",\n                                \"updated_at\": \"2025-07-01 12:35:15\"\n                            },\n                            \"old\": {\n                                \"label\": \"Testing for another user\",\n                                \"updated_at\": \"2025-06-26 03:25:16\"\n                            }\n                        },\n                        \"created_at\": \"2025-07-01T04:35:15.000000Z\",\n                        \"updated_at\": \"2025-07-01T04:35:15.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"727aad0c-b0f3-476c-b695-060873d741b1\",\n                        \"user_name\": \"Regular User\"\n                    }\n                ]\n            },\n            {\n                \"id\": 21,\n                \"ip_address\": \"b0e0:11ba:8bb2:9b80:6a8f:e0b0:2e21:1677\",\n                \"label\": \"testing logs display testing edit ko to\",\n                \"comment\": null,\n                \"user_id\": 1,\n                \"created_at\": \"2025-06-27T14:59:32.000000Z\",\n                \"updated_at\": \"2025-06-30T03:57:12.000000Z\",\n                \"owner_name\": \"Marc Saulo\",\n                \"logs\": [\n                    {\n                        \"id\": 21,\n                        \"log_name\": \"default\",\n                        \"description\": \"created\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 21,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 1,\n                        \"properties\": {\n                            \"new\": {\n                                \"ip_address\": \"b0e0:11ba:8bb2:9b80:6a8f:e0b0:2e21:1677\",\n                                \"label\": \"testing logs display\",\n                                \"comment\": null\n                            },\n                            \"old\": {\n                                \"ip_address\": \"b0e0:11ba:8bb2:9b80:6a8f:e0b0:2e21:1677\",\n                                \"label\": \"testing logs display\",\n                                \"comment\": null,\n                                \"user_id\": 1,\n                                \"updated_at\": \"2025-06-27 22:59:32\",\n                                \"created_at\": \"2025-06-27 22:59:32\",\n                                \"id\": 21\n                            }\n                        },\n                        \"created_at\": \"2025-06-27T14:59:32.000000Z\",\n                        \"updated_at\": \"2025-06-27T14:59:32.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"33433064-3324-4bc6-adc5-462599a229a5\",\n                        \"user_name\": \"Marc Saulo\"\n                    },\n                    {\n                        \"id\": 25,\n                        \"log_name\": \"default\",\n                        \"description\": \"edited\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 21,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 1,\n                        \"properties\": {\n                            \"new\": {\n                                \"label\": \"testing logs display testing\"\n                            },\n                            \"old\": {\n                                \"id\": 21,\n                                \"ip_address\": \"b0e0:11ba:8bb2:9b80:6a8f:e0b0:2e21:1677\",\n                                \"label\": \"testing logs display\",\n                                \"comment\": null,\n                                \"user_id\": 1,\n                                \"created_at\": \"2025-06-27T14:59:32.000000Z\",\n                                \"updated_at\": \"2025-06-27T14:59:32.000000Z\"\n                            }\n                        },\n                        \"created_at\": \"2025-06-28T03:35:01.000000Z\",\n                        \"updated_at\": \"2025-06-28T03:35:01.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"088659d0-b3c4-4833-b4db-c7faf086c00c\",\n                        \"user_name\": \"Marc Saulo\"\n                    },\n                    {\n                        \"id\": 29,\n                        \"log_name\": \"default\",\n                        \"description\": \"edited\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 21,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 1,\n                        \"properties\": {\n                            \"new\": {\n                                \"label\": \"testing logs display testing edit ko to\",\n                                \"updated_at\": \"2025-06-30 11:57:12\"\n                            },\n                            \"old\": {\n                                \"label\": \"testing logs display testing\",\n                                \"updated_at\": \"2025-06-28 11:35:01\"\n                            }\n                        },\n                        \"created_at\": \"2025-06-30T03:57:12.000000Z\",\n                        \"updated_at\": \"2025-06-30T03:57:12.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"b93724b0-f01f-4fda-9465-654f338185e9\",\n                        \"user_name\": \"Marc Saulo\"\n                    }\n                ]\n            },\n            {\n                \"id\": 19,\n                \"ip_address\": \"120b:c298:abfa:0007:db97:b419:2916:4ac8\",\n                \"label\": \"miss you joyce so much hehe\",\n                \"comment\": null,\n                \"user_id\": 1,\n                \"created_at\": \"2025-06-26T06:15:23.000000Z\",\n                \"updated_at\": \"2025-06-28T03:43:18.000000Z\",\n                \"owner_name\": \"Marc Saulo\",\n                \"logs\": [\n                    {\n                        \"id\": 17,\n                        \"log_name\": \"default\",\n                        \"description\": \"created\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 19,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 1,\n                        \"properties\": {\n                            \"new\": {\n                                \"ip_address\": \"120b:c298:abfa:0007:db97:b419:2916:4ac8\",\n                                \"label\": \"miss you joyce\",\n                                \"comment\": null\n                            },\n                            \"old\": {\n                                \"ip_address\": \"120b:c298:abfa:0007:db97:b419:2916:4ac8\",\n                                \"label\": \"miss you joyce\",\n                                \"comment\": null,\n                                \"user_id\": 1,\n                                \"updated_at\": \"2025-06-26 14:15:23\",\n                                \"created_at\": \"2025-06-26 14:15:23\",\n                                \"id\": 19\n                            }\n                        },\n                        \"created_at\": \"2025-06-26T06:15:23.000000Z\",\n                        \"updated_at\": \"2025-06-26T06:15:23.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"271800f4-5cc5-46f8-8ecd-6a4a56c743de\",\n                        \"user_name\": \"Marc Saulo\"\n                    },\n                    {\n                        \"id\": 26,\n                        \"log_name\": \"default\",\n                        \"description\": \"edited\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 19,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 1,\n                        \"properties\": {\n                            \"new\": {\n                                \"label\": \"miss you joyce so much\",\n                                \"updated_at\": \"2025-06-28 11:42:41\"\n                            },\n                            \"old\": {\n                                \"id\": 19,\n                                \"ip_address\": \"120b:c298:abfa:0007:db97:b419:2916:4ac8\",\n                                \"label\": \"miss you joyce\",\n                                \"comment\": null,\n                                \"user_id\": 1,\n                                \"created_at\": \"2025-06-26T06:15:23.000000Z\",\n                                \"updated_at\": \"2025-06-26T06:15:23.000000Z\"\n                            }\n                        },\n                        \"created_at\": \"2025-06-28T03:42:41.000000Z\",\n                        \"updated_at\": \"2025-06-28T03:42:41.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"088659d0-b3c4-4833-b4db-c7faf086c00c\",\n                        \"user_name\": \"Marc Saulo\"\n                    },\n                    {\n                        \"id\": 27,\n                        \"log_name\": \"default\",\n                        \"description\": \"edited\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 19,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 1,\n                        \"properties\": {\n                            \"new\": {\n                                \"label\": \"miss you joyce so much hehe\",\n                                \"updated_at\": \"2025-06-28 11:43:18\"\n                            },\n                            \"old\": {\n                                \"label\": \"miss you joyce so much\",\n                                \"updated_at\": \"2025-06-28 11:42:41\"\n                            }\n                        },\n                        \"created_at\": \"2025-06-28T03:43:18.000000Z\",\n                        \"updated_at\": \"2025-06-28T03:43:18.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"088659d0-b3c4-4833-b4db-c7faf086c00c\",\n                        \"user_name\": \"Marc Saulo\"\n                    }\n                ]\n            },\n            {\n                \"id\": 22,\n                \"ip_address\": \"9dac:b7ed:12c8:75c3:40f5:f6ef:4ebf:8f0b\",\n                \"label\": \"testing new logs for acitivty log display\",\n                \"comment\": null,\n                \"user_id\": 1,\n                \"created_at\": \"2025-06-27T15:53:35.000000Z\",\n                \"updated_at\": \"2025-06-28T03:18:44.000000Z\",\n                \"owner_name\": \"Marc Saulo\",\n                \"logs\": [\n                    {\n                        \"id\": 23,\n                        \"log_name\": \"default\",\n                        \"description\": \"created\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 22,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 1,\n                        \"properties\": {\n                            \"new\": {\n                                \"ip_address\": \"9dac:b7ed:12c8:75c3:40f5:f6ef:4ebf:8f0b\",\n                                \"label\": \"testing new logs\",\n                                \"comment\": null,\n                                \"user_id\": 1,\n                                \"updated_at\": \"2025-06-27 23:53:35\",\n                                \"created_at\": \"2025-06-27 23:53:35\",\n                                \"id\": 22\n                            },\n                            \"old\": []\n                        },\n                        \"created_at\": \"2025-06-27T15:53:35.000000Z\",\n                        \"updated_at\": \"2025-06-27T15:53:35.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"33433064-3324-4bc6-adc5-462599a229a5\",\n                        \"user_name\": \"Marc Saulo\"\n                    },\n                    {\n                        \"id\": 24,\n                        \"log_name\": \"default\",\n                        \"description\": \"edited\",\n                        \"subject_type\": \"App\\\\Models\\\\IpAddress\",\n                        \"subject_id\": 22,\n                        \"causer_type\": \"App\\\\Models\\\\User\",\n                        \"causer_id\": 1,\n                        \"properties\": {\n                            \"new\": {\n                                \"label\": \"testing new logs for acitivty log display\",\n                                \"updated_at\": \"2025-06-28 11:18:44\"\n                            },\n                            \"old\": {\n                                \"id\": 22,\n                                \"ip_address\": \"9dac:b7ed:12c8:75c3:40f5:f6ef:4ebf:8f0b\",\n                                \"label\": \"testing new logs\",\n                                \"comment\": null,\n                                \"user_id\": 1,\n                                \"created_at\": \"2025-06-27T15:53:35.000000Z\",\n                                \"updated_at\": \"2025-06-27T15:53:35.000000Z\"\n                            }\n                        },\n                        \"created_at\": \"2025-06-28T03:18:44.000000Z\",\n                        \"updated_at\": \"2025-06-28T03:18:44.000000Z\",\n                        \"event\": null,\n                        \"batch_uuid\": null,\n                        \"session_id\": \"088659d0-b3c4-4833-b4db-c7faf086c00c\",\n                        \"user_name\": \"Marc Saulo\"\n                    }\n                ]\n            }\n        ],\n        \"first_page_url\": \"http://localhost/api/super-admin/ip-addresses?page=1\",\n        \"from\": 1,\n        \"last_page\": 2,\n        \"last_page_url\": \"http://localhost/api/super-admin/ip-addresses?page=2\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/ip-addresses?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/ip-addresses?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/super-admin/ip-addresses?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://localhost/api/super-admin/ip-addresses?page=2\",\n        \"path\": \"http://localhost/api/super-admin/ip-addresses\",\n        \"per_page\": 5,\n        \"prev_page_url\": null,\n        \"to\": 5,\n        \"total\": 10\n    }\n}"
+				}
+			]
+		}
+	]
+}
